@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Cravings_website
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align:center; color:orange">ORDER FOOD FOR YOUR CRAVINGS</h1>
+
+
+
+<div class="row">
+    {% for pizza in pizzas %}
+        <div class="col-md-3 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ pizza.images.url }}" style="height: 200px;" class="card-img-top" alt="{{ pizza.pizza_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pizza.pizza_name }}</h5>
+                    <p>
+                        ₹{{pizza.price}}
+                    </p>
+                    {% comment %} <a href="#" class="btn btn-success">Cart<i class="fa fa-shopping-cart"></i></a> {% endcomment %}
+                    <a href="{% url 'add_cart' pizza.uid %}" class="btn btn-success">Cart<i class="fa fa-shopping-cart"></i></a>
+                    <a href="#" class="btn btn-primary">20% discount</a>
+                    
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}    

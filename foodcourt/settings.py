@@ -13,18 +13,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os 
 from dotenv import load_dotenv
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dofvucpue',
-    'API_KEY': '515147159924998',
-    'API_SECRET': 'GzcCsso_cayFrQcE20ZlLv0ZmcQ'
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -146,7 +134,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "/media/"
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # STATIC_URL = 'static/'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

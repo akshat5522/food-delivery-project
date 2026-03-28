@@ -107,9 +107,14 @@ def orders(request):
 @login_required(login_url='/login_page/')
 def success(request):
     order_id = request.GET.get('order_id')
-    cart = Cart.objects.get(razor_pay_order_id = order_id)
-    cart.is_paid =  True
-    cart.save()
+
+    try:
+        cart = Cart.objects.get(razor_pay_order_id=order_id)
+        cart.is_paid = True
+        cart.save()
+    except Cart.DoesNotExist:
+        print("Cart not found for order_id:", order_id)
+
     return redirect('/orders/')
 
 

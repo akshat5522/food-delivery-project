@@ -22,7 +22,7 @@
                     <a href="{% url 'remove_cart_items' cartitems.uid %}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                 </th>
                 <td>
-                    <img src="{{cartitems.pizza.images}}" style="height:100px; width:100px">
+                    <img src="{{ cartitems.pizza.images.url }}" style="height:100px; width:100px">
                 </td>
                 <td>{{cartitems.pizza.pizza_name}}</td>
                 <td>{{cartitems.pizza.price}}</td>

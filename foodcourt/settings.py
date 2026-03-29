@@ -51,10 +51,11 @@ INSTALLED_APPS = [
 import cloudinary
 
 cloudinary.config(
-    cloud_name = 'dofvucpue',
-    api_key = '515147159924998',
-    api_secret = 'GzcCsso_cayFrQcE20ZlLv0ZmcQ'
+    cloud_name='dofvucpue',
+    api_key='515147159924998',
+    api_secret='GzcCsso_cayFrQcE20ZlLv0ZmcQ'
 )
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [

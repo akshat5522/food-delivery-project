@@ -1,1 +1,1 @@
-web: gunicorn foodcourt.wsgi:application
+web: python manage.py migrate && gunicorn foodcourt.wsgi
